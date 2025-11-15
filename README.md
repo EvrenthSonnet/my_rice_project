@@ -27,7 +27,7 @@
 ## 🗂️ 目录结构 (Directory Structure)
 
 ```
-rice_classification/.claude/
+rice_detection/.claude/
 ├── README.md                          # 本文件（系统总览）
 ├── CLAUDE_RULES.md                    # 交互风格规则（第一性原理学习）
 ├── PROJECT_RULES.md                   # 项目工程规范
@@ -213,7 +213,7 @@ loss:
 Hook分析：
 - 关键词"Tile" → 激活 cv-semantic-segmentation skill
 - 关键词"实现" → 加载 PROJECT_RULES.md
-- 提醒：先检查 src/rice_detection/data/ 是否已有实现
+- 提醒：先检查 src/rice_classification/data/ 是否已有实现
 ```
 
 ---
