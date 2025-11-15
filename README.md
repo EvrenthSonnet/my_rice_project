@@ -27,8 +27,10 @@
 ## 🗂️ 目录结构 (Directory Structure)
 
 ```
-rice_detection/.claude/
+rice_classification/.claude/
 ├── README.md                          # 本文件（系统总览）
+
+
 ├── CLAUDE_RULES.md                    # 交互风格规则（第一性原理学习）
 ├── PROJECT_RULES.md                   # 项目工程规范
 │
@@ -119,7 +121,7 @@ rice_detection/.claude/
 **行为模式：**
 ```
 1. 检查项目结构（读取 rules/project_structure.md）
-2. 搜索现有实现（src/rice_detection/ 下）
+2. 搜索现有实现（src/ 下）
 3. 确认修改位置符合规范
 4. 实施修改（遵守编码规范）
 5. 更新文档（脚本注释 + README）
@@ -147,7 +149,7 @@ rice_detection/.claude/
 
 **激活条件：**
 - 关键词：语义分割、Dice Loss、Focal Loss、UNet、Tile
-- 文件路径：`src/rice_detection/models/`, `src/rice_detection/data/`
+- 文件路径：`src/models/`, `src/data/`
 - 任务类型：模型架构、损失函数、数据处理
 
 **核心功能：**
@@ -213,7 +215,7 @@ loss:
 Hook分析：
 - 关键词"Tile" → 激活 cv-semantic-segmentation skill
 - 关键词"实现" → 加载 PROJECT_RULES.md
-- 提醒：先检查 src/rice_classification/data/ 是否已有实现
+- 提醒：先检查 src/data/ 是否已有实现
 ```
 
 ---
@@ -229,7 +231,7 @@ Claude使用工具 → Hook检查 → 验证合规性 → 提醒文档更新
 
 **示例：**
 ```
-Claude: Edit → src/rice_detection/training/trainer.py
+Claude: Edit → src/training/trainer.py
 
 Hook检查：
 ✅ 路径符合项目结构
@@ -247,7 +249,7 @@ Hook检查：
     "auto_activate": true,
     "triggers": {
       "keywords": ["语义分割", "Dice", "Focal", "UNet", "Tile"],
-      "file_patterns": ["src/rice_detection/{models,data,losses}/**/*.py"]
+      "file_patterns": ["src/{models,data,losses}/**/*.py"]
     }
   }
 }
@@ -276,14 +278,13 @@ D:\PyCharm\pycharmprojects\RiceDetection\.claude\
 
 RiceDetection/
 ├── src/
-│   └── rice_detection/
-│       ├── data/              # 你的数据处理模块
-│       │   ├── __init__.py
-│       │   ├── tile_dataset.py
-│       │   └── ...
-│       ├── models/            # 你的模型定义
-│       └── ...
-├── configs/
+│    ├── data/              # 你的数据处理模块
+│    |    └── ...      
+│    |    ├── __init__.py
+│    |    ├── tile_dataset.py
+│    ├── models/            # 你的模型定义
+│         └── ...
+├── scripts/
 └── ...
 ```
 
@@ -328,14 +329,14 @@ Claude（自动激活CLAUDE_RULES.md + cv-semantic-segmentation skill）：
 
 Claude（自动激活PROJECT_RULES.md + cv-semantic-segmentation skill）：
 1. ✅ 搜索现有实现...
-   → 未找到 src/rice_detection/losses/dice_loss.py
-2. 📝 建议：在 src/rice_detection/losses/ 下创建 dice_loss.py
+   → 未找到 src/losses/dice_loss.py
+2. 📝 建议：在 src/losses/ 下创建 dice_loss.py
 3. ⏸️ 是否继续？
 
 你："继续"
 
 Claude：
-1. ✅ 创建文件：src/rice_detection/losses/dice_loss.py
+1. ✅ 创建文件：src/losses/dice_loss.py
 2. ✅ 更新文档：losses/README.md
 3. ✅ 提醒：
    - 在 config 中添加 loss.type: "dice"
