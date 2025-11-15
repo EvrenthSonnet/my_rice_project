@@ -27,7 +27,7 @@
 ## 🗂️ 目录结构 (Directory Structure)
 
 ```
-RiceDetection/.claude/
+rice_classification/.claude/
 ├── README.md                          # 本文件（系统总览）
 ├── CLAUDE_RULES.md                    # 交互风格规则（第一性原理学习）
 ├── PROJECT_RULES.md                   # 项目工程规范
